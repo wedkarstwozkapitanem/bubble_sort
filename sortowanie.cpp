@@ -1,3 +1,8 @@
+/*
+*   nazwa: sortowanie bąbelkowe
+*   autor: Dominik Łempicki Kapitan
+*/
+
 
 #include<iostream>
 #include <limits>
