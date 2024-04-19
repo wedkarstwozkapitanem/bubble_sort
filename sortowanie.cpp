@@ -1,4 +1,5 @@
-﻿#include <iostream>
+
+#include<iostream>
 #include <limits>
 #include <locale>
 #include <vector>
@@ -52,6 +53,25 @@ bool posortuj(std::vector<T>& liczby, int rozmiar) {
         zapisz(liczby, liczby.size());
         return true;
     }
+ 
+    bool zmiana{false};
+    do {
+        zmiana = false;
+        for (int i{ 0 }; i < rozmiar - 1; i++) {
+            try {
+                if (liczby[i] < liczby[i + 1]) {
+                    std::swap(liczby[i], liczby[i + 1]);
+                    zmiana = true;
+                }
+            }
+            catch (bool b) {
+                std::cerr << "Błąd, poza zakresem indeksu tablicy!";
+            }
+        }
+    } while (zmiana);
+    
+     
+   /*
     for (int i{ 0 }; i < rozmiar - 1; i++) {
         for (int j{ 0 }; j < rozmiar - 1 - i; j++) {
             try {
@@ -64,6 +84,7 @@ bool posortuj(std::vector<T>& liczby, int rozmiar) {
             }
         }
     }
+    */
     zapisz(liczby, liczby.size());
 }
 
